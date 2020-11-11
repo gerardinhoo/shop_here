@@ -1,9 +1,11 @@
 import React from 'react';
-import products from '../products';
 import { Col, Row } from 'react-bootstrap';
 import Products from '../components/Products';
+import products from '../products';
+
 
 const HomeScreen = () => {
+  console.log(products)
   return (
     <>
       <Row>
