@@ -5,7 +5,7 @@ import {
   PRODUCT_LIST_FAIL
 } from "../contants/productConstants";
 
-export const listProduct = () => async (dispatch) => {
+export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
@@ -16,10 +16,13 @@ export const listProduct = () => async (dispatch) => {
       payload: data
     })
   }
-  catch(error) {
-     dispatch({
-       type: PRODUCT_LIST_FAIL,
-       payload: error.response && error.response.data.message ? error.response.data.message : error.message
-     })
+  catch (error) {
+    dispatch({
+      type: PRODUCT_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    })
   }
 }
